@@ -6,6 +6,7 @@ public class Livro {
 	private String categoria;
 	private String preco;
 
+	//construtor serve para inicializar o valor dos atributos
 	public Livro(String titulo, String isbn, String categoria,String preco) {
 		this.titulo = titulo;
 		this.isbn = isbn;

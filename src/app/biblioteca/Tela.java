@@ -13,19 +13,19 @@ public class Tela {
 	Usuario usuario;
 
 	public void exibirMenuBoasVindas() {
-		System.out.println("Bem Vindo a Biblioteca Virtual ");
-		System.out.println("Digite o seu Login:");
-		String login=opcao.nextLine();
-		System.out.println("Digite sua Senha:");
-		String senha=opcao.nextLine();
-		if(!usuario.logar(login, senha)) {
-			System.out.println("Usuario e senha invalida !");
+		while(!usuario.isLogado()) {
+			System.out.println("Bem Vindo a Biblioteca Virtual ");
+			System.out.println("Digite o seu Login:");
+			String login=opcao.nextLine();
+			System.out.println("Digite sua Senha:");
+			String senha=opcao.nextLine();
+
+			if(!usuario.logar(login, senha)) {
+				System.out.println("Usuario e senha invalida !");
+			}
 		}
-		if(usuario.isLogado()) {
-			menu();
-		}
-		
-		
+		menu();
+
 	}
 
 	public void cadastrarUsuario() {
@@ -40,7 +40,7 @@ public class Tela {
 		System.out.println("Digite a Senha: ");
 		String senha = opcao.nextLine();
 		usuario = new Usuario(nome,dataNasc,cpf,login,senha);
-		
+
 		exibirMenuBoasVindas();
 	}
 
@@ -49,6 +49,7 @@ public class Tela {
 		System.out.println("2 - Listar livros");
 		System.out.println("3 - Atualizar livro");
 		System.out.println("4 - Deletar livro");
+		System.out.println("5 - Deslogar");
 		System.out.println("Digite uma opÁ„o: ");
 		//ler a opcao do usuario
 		String opcaoUsuario = opcao.nextLine();
@@ -63,6 +64,12 @@ public class Tela {
 		}
 		else if(opcaoUsuario.equals("4")) {
 			deletarLivro();
+		}else if(opcaoUsuario.equals("5")) {
+			usuario.deslogar();
+			System.out.println("Usuario Deslogado");
+			if(!usuario.isLogado()) {
+				exibirMenuBoasVindas();
+			}
 		}
 
 		menu();//chamar o menu depois do usu√°rio escolher um op√ß√£o

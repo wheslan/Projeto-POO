@@ -5,8 +5,8 @@ public class Pessoa {
 	private String nome;
 	private String dataNasc;
 	private String cpf; 
+	
 	public Pessoa(String nome, String dataNasc, String cpf) {
-		super();
 		this.nome = nome;
 		this.dataNasc = dataNasc;
 		this.cpf = cpf;

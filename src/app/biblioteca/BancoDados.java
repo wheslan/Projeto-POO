@@ -46,7 +46,7 @@ public class BancoDados {
     		}	
 		}
     }
-    
+    //recebe o atributos abaixo no parametro
     public void atualizarLivro(String isbnAntigo, String titulo, String isbn, String categoria, String preco) {
     	for (int i = 0; i < livros.size(); i++) {
     		if(livros.get(i).getIsbn().equals(isbnAntigo)) {
@@ -76,9 +76,13 @@ public class BancoDados {
             }
         }
     }
+    //recebe o isbn por parâmetro
     public boolean buscarLivro(String isbn) {
+    	
     	for (int i = 0; i < livros.size(); i++) {
+    		
     		if(livros.get(i).getIsbn().equals(isbn)) {
+    			
     			return true;
     		}
     	}

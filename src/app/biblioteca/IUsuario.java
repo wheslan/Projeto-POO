@@ -4,7 +4,7 @@ public interface IUsuario {
 
 	long TIME_OUT = 10000000;
 	
-	
+	//metodos logar
 	boolean logar(String login, String senha);
 	boolean deslogar();
 	String getLogin();

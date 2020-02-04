@@ -7,7 +7,7 @@ public class Usuario extends Pessoa implements IUsuario {
 	private boolean logado;
 	
 	public Usuario(String nome, String dataNasc, String cpf, String login, String senha) {
-		super(nome, dataNasc, cpf);
+		super(nome, dataNasc, cpf);//superclasse é pessoa
 		this.login = login;
 		this.senha = senha;	
 		this.logado = false;
@@ -30,6 +30,8 @@ public class Usuario extends Pessoa implements IUsuario {
 		this.senha = senha;
 	}
 
+	
+	//Implementando os métodos da interface IUsuario
 	@Override
 	public boolean logar(String login, String senha) {
 		if(this.login.equals(login) && this.senha.equals(senha)) {
